@@ -1,0 +1,39 @@
+.hidden.menu {
+  display: none;
+}
+
+.espaco{
+
+height: 5em;
+
+}
+article.ui.grid {
+    margin-top: auto;
+    min-height: 40em;
+
+}
+
+
+.footer {
+    min-height: 15% !important;
+    margin-top: 2% !important;
+    margin-bottom: 0em !important;
+    color: white;
+}
+.ui.card{
+}
+
+.ui.ribbon.label{
+margin-bottom:1.2em !important;
+
+}
+.ui.cards > .card > .image > img {
+height: 10em;
+}
+
+.errorlist{
+/*margin-left:-20%;*/
+}
+/*.chamados{
+font-size: 24px;
+}*/

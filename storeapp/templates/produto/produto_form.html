@@ -1,0 +1,16 @@
+
+{% extends 'base.html' %}
+
+{% block title_block %}
+Lista de Produtos
+{% endblock title_block %}
+{% load  staticfiles %}
+{% block body_block %}
+<section class="ui ten wide column">
+
+     <div class="ui segment"> <div class="header"> <a class="ui ribbon black label"><h3>Cadastro de Usuário</h3></a></div>
+        <!--{#{%include  "includes/message.html"%}#}-->
+    {%include  "includes/forms.html"%}
+    </div>
+</section>
+{%endblock%}

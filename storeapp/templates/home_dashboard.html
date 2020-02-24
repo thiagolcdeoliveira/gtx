@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+
+
+{% block title_block %}
+Lista de Produtos
+{% endblock title_block %}
+{% load  staticfiles system %}
+{% block body_block %}
+<section class="ui ten wide column">
+
+    <div class="ui segment"> <div class="header"> <a class="ui ribbon black label"><h3>Detalhes do Chamado</h3></a></div>
+<div class="ui two cards">
+  <div class="ui card">
+    <div class="content">
+      <div class="header">Produtos em Estoque</div>
+      <div class="description">
+        x
+
+        <p></p>
+      </div>
+    </div>
+    <div class="extra content">
+      <span class="left floated like">
+      </span>
+      <span class="right floated star"></span>
+    </div>
+  </div>
+    <div class="ui card">
+  <div class="content">
+       <div class="header">Chamados</div>
+    <div class="description">
+      <p>x Abertos </p>
+      <p>x Fechados</p>
+    </div>
+  </div>
+  <div class="extra content">
+    <span class="left floated like">
+
+    </span>
+    <span class="right floated star">
+
+    </span>
+  </div>
+</div>
+
+   <div class="ui card">
+  <div class="content">
+    <i class="right floated  icon"></i>
+    <i class="right floated  icon"></i>
+    <div class="header">Chamados Mes</div>
+    <div class="description chamados">
+      <p>{{chamadosmes.chamadoaberto}} Abertos</p>
+      <p>{{chamadosmes.chamadofechado}} Fechados</p>
+
+    </div>
+  </div>
+  <div class="extra content">
+    <span class="left floated ">
+      <i class=" icon"></i>
+    </span>
+    <span class="right floated ">
+      <i class=" icon"></i>
+    </span>
+  </div>
+</div>
+
+   <div class="ui card">
+  <div class="content">
+    <i class="right floated  icon"></i>
+    <i class="right floated  icon"></i>
+    <div class="header">Chamados no Ano</div>
+    <div class="description chamados">
+      <p>{{chamadosano.chamadoaberto}} Abertos</p>
+      <p>{{chamadosano.chamadofechado}} Fechados</p>
+    </div>
+  </div>
+  <div class="extra content">
+    <span class=" floated like">
+      <i class=" icon"></i>
+    </span>
+    <span class=" floated star">
+      <i class=" icon"></i>
+    </span>
+  </div>
+</div>
+
+
+
+    </div>
+
+</section>
+{%endblock%}

@@ -1,0 +1,89 @@
+
+{% extends 'base.html' %}
+
+{% block title_block %}
+Lista de Produtos
+{% endblock title_block %}
+{% load  staticfiles %}
+{% block body_block %}
+<section class="ui ten wide column">
+
+     <div class="ui segment"> <div class="header"> <a class="ui ribbon black label"><h3>Cadastro de Usuário</h3></a></div>
+        <!--{#{%include  "includes/message.html"%}#}-->
+    <!--{%include  "includes/forms.html"%}-->
+         <!--{%for object in objects%}-->
+         <!--{{object.nome}}-->
+         <!--{{object.descricao}}-->
+         <!--{{object.codigo_barras}}-->
+         <!--{%endfor%}-->
+            <form action="{%url 'chamado-list'%}" class="ui form">
+            <div class=" four fields">
+            <!--<div class=" three fields">-->
+            <!--<div class=" three fields">-->
+            <!--<div class=" two fields">-->
+            <!--<div class=" two fields">-->
+                <div class="field">
+                    <input  type="text">
+            <!--</div>-->
+                </div>
+                <div class="field">
+                <select name="tipo">
+                    <option value="">Todos</option>
+                    <option value="1">Número Chamado</option>
+                    <option value="2">Descricao</option>
+                    <option value="3">Data de Abertura</option>
+                    <option value="4">Data de Fechamento</option>
+                    <option value="5">Funcionario</option>
+                    <option value="6">Responsavel</option>
+                </select>
+                </div>
+            <div class="field">
+                <select name="status">
+                   <option value="">Todos</option>
+
+                    <option value="">Aberto</option>
+                    <option value="">Fechado</option>
+                </select>
+            </div>
+                <div class="field">
+                    <button type="submit" class="ui button submit fluid attached"> Buscar</button>
+                </div>
+            </div>
+        </form>
+        <table class="ui single line table">
+            <thead>
+            <tr>
+                <th>Cod</th>
+                <th>Descrição</th>
+                <th>Funcionario</th>
+                <th>Responsavel</th>
+                <!--<th>Satus</th>-->
+                <th>Detalhes</th>
+                <th>Atualizar</th>
+                <th>Status</th>
+            </tr>
+            </thead>
+            <tbody>
+
+                {%for object in object_list%} <tr>
+                <td> #{{object.id}}  </td>
+                <td> {{object.descricao}}</td>
+                <td> {{object.funcionario}}</td>
+                <td> {{object.responsavel}}</td>
+                <!--<td> {{object.status}} </td>-->
+                <td>  <a class="ui button fluid attached" href="{% url 'chamado-detail' object.pk %}"><i class="ui icon eye"></i> Ver mais</a></td>
+                <td>  <a class="ui button red  fluid attached" href="{% url 'chamado-update' object.pk %}"><i class="ui icon edit"></i> Editar</a></td>
+               {%if object.status %}
+                <td>  <a class="ui button green attached" href="{% url 'chamado-fechar' object.pk %}"><i class="ui icon close"></i> Reabrir Chaamdo</a></td></tr>
+               {%else%}
+                <td>  <a class="ui button red attached" href="{% url 'chamado-fechar' object.pk %}"><i class="ui icon edit"></i> Fechar Chamado</a></td></tr>
+                {%endif%}
+                {%endfor%}
+
+
+            </tbody>
+        </table>
+            {%include "includes/paginete.html"%}
+    </div>
+</section>
+{%endblock%}
